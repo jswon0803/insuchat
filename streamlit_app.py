@@ -14,7 +14,8 @@ from langchain_openai.embeddings import OpenAIEmbeddings
 from dotenv import load_dotenv
 load_dotenv()
 
-st.set_page_config(page_title="JR. Board Chat", page_icon=":computer:")   
+
+st.set_page_config(page_title="Insu Chatbot", page_icon=":computer:")   
 
 # Sidebar 의 header 및 markdown 글자 색깔 & expander 배경색 지정
 st.markdown(
@@ -116,7 +117,7 @@ st.markdown(
 st.markdown(
     """
     <div class="main-header">
-         KFPA 복지 기준 검색기<span>📖</span>
+         KFPA 규정사례 모음집 검색<span>📖</span>
     </div>
     """,
     unsafe_allow_html=True
@@ -126,37 +127,26 @@ st.markdown('<div class="custom-list">입력 내용이 상세할수록 답변이
 st.divider()
 
 with st.sidebar:
-    # JR. Board Chatbot 제목 추가
-    st.markdown('<div class="sidebar-title">JR. Board Chatbot</div>', unsafe_allow_html=True)
+    # Insu Chatbot 제목 추가
+    st.markdown('<div class="sidebar-title">Insu Chatbot</div>', unsafe_allow_html=True)
 
     # About 헤더
-    st.markdown('<div class="sidebar-header">About</div>', unsafe_allow_html=True)
-    st.markdown("복지와 관련된 기준 기반으로 질문에 답변합니다")
+    st.markdown('<div class="sidebar-header">소개</div>', unsafe_allow_html=True)
+    st.markdown("KFPA 규정검색 도우미")
 
     # Document list 헤더
-    st.markdown('<div class="sidebar-header">Document list</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sidebar-header">질문예제</div>', unsafe_allow_html=True)
     st.markdown(
         """
         <ul class="sidebar-list">
-            <li>가족수당지급기준</li>
-            <li>국내교육연수출장비지급기준</li>
-            <li>비연고지단신근무자교통보조금지급기준</li>
-            <li>임직원대출운영기준</li>
-            <li>자기계발지원기준</li>
-            <li>자녀양육수당 지급기준</li>
-            <li>중식수당 지급기준</li>
-            <li>직원 차량유지비 등 지급기준</li>
-            <li>직원 경조금지급기준</li>
-            <li>체력단련비 지급기준</li>
-            <li>출퇴근보조금지급기준</li>
-            <li>피복관리기준</li>
-            <li>협회가 필요로 하는 분야의 자격 인정 종목 기준</li>
+            <li>xxx관련 규정 알려줘</li>
+
         </ul>
         """,
         unsafe_allow_html=True
     )
-    st.image('KV.png')
-    st.image('영문시그니처(소).jpg')
+    # st.image('KV.png')
+    # st.image('영문시그니처(소).jpg')
     
 @st.cache_resource(ttl="1h")
 def get_faiss_db():
