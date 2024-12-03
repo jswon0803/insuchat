@@ -127,7 +127,7 @@ st.divider()
 
 with st.sidebar:
     # JR. Board Chatbot 제목 추가
-    st.markdown('<div class="sidebar-title">JR. Board Chatbot</div>', unsafe_allow_html=True)
+    st.markdown('<div class="sidebar-title">KFPA 규정모음집</div>', unsafe_allow_html=True)
 
     # About 헤더
     st.markdown('<div class="sidebar-header">소개</div>', unsafe_allow_html=True)
@@ -138,8 +138,9 @@ with st.sidebar:
     st.markdown(
         """
         <ul class="sidebar-list">
-            <li>xxx관련 규정 알려줘</li>
-
+            <li>퇴직금은 어디에서 찾아?</li>
+            <li>여비규정은 어느문서에서봐?</li>
+            <li>정보자료 보안관련문서는?</li>
         </ul>
         """,
         unsafe_allow_html=True
