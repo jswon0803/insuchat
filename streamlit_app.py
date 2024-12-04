@@ -230,5 +230,5 @@ if user_query := st.chat_input(placeholder="Ask me anything!"):
         print('user_query', user_query)
         print('retrieval_handler', retrieval_handler)
         print('stream_handler', stream_handler)
-        response = qa_chain.run(user_query, callbacks=[retrieval_handler, stream_handler])
+        response = qa_chain(user_query, callbacks=[retrieval_handler, stream_handler])
         display_retrieved_documents(retrieval_handler.documents)
